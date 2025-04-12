@@ -7,6 +7,7 @@ import Logo from "./logo";
 import { cn } from "@/lib/utils";
 import { ModeToggle } from "@/components/mode-toggle";
 import { SignInButton } from "@clerk/clerk-react";
+import { Spinner } from "@/components/spinner";
 
 const Navbar = () => {
   const { isAuthenticated, isLoading } = useConvexAuth();
@@ -19,7 +20,7 @@ const Navbar = () => {
       )}>
       <Logo />
       <div className="md:ml-auto md:justify-end justify-between w-full flex items-center gap-x-2">
-        {isLoading && <p>Loading...</p>}
+        {isLoading && <Spinner />}
         {!isAuthenticated && !isLoading && (
           <>
             <SignInButton mode="modal">
@@ -28,9 +29,7 @@ const Navbar = () => {
               </Button>
             </SignInButton>
             <SignInButton mode="modal">
-              <Button variant="ghost" size="sm">
-                Get Mootion free
-              </Button>
+              <Button size="sm">Get Mootion free</Button>
             </SignInButton>
           </>
         )}
