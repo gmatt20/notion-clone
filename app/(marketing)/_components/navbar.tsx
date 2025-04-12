@@ -1,12 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import { useConvexAuth } from "convex/react";
 import useScrollTop from "@/hooks/use-scroll-top";
 import { Button } from "@/components/ui/button";
 import Logo from "./logo";
 import { cn } from "@/lib/utils";
 import { ModeToggle } from "@/components/mode-toggle";
-import { SignInButton } from "@clerk/clerk-react";
+import { SignInButton, UserButton } from "@clerk/clerk-react";
 import { Spinner } from "@/components/spinner";
 
 const Navbar = () => {
@@ -31,6 +32,14 @@ const Navbar = () => {
             <SignInButton mode="modal">
               <Button size="sm">Get Mootion free</Button>
             </SignInButton>
+          </>
+        )}
+        {isAuthenticated && !isLoading && (
+          <>
+            <Button variant="ghost" size="sm">
+              <Link href="/documents">Enter Mootion</Link>
+            </Button>
+            <UserButton afterSignOutUrl="/" />
           </>
         )}
         <ModeToggle />
