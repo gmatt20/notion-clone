@@ -11,7 +11,7 @@ export const create = mutation({
   handler: async (ctx, args) => {
     const identity = await ctx.auth.getUserIdentity();
 
-    if(!identity){
+    if (!identity) {
       throw new Error("Not authenticated");
     }
 
@@ -23,8 +23,8 @@ export const create = mutation({
       userId,
       isArchived: false,
       isPublished: false,
-    })
-    
+    });
+
     return document;
-  }
+  },
 });
