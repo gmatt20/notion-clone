@@ -1,36 +1,9 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Full Stack Notion-Style Application!
 
-## Getting Started
+This project is a full stack Notion-style application, inspired by an industry-grade development process. While I initially referenced the Code With Antonio tutorial to get familiar with the stack — including Next.js, Tailwind CSS, Convex for backend logic, and Clerk for authentication — my focus has gone far beyond replication.
 
-First, run the development server:
+Throughout the build, I’ve approached each component as an opportunity to learn core software engineering principles — including clean architecture, separation of concerns, reusable components, API design, and state management. I’ve taken the time to understand how these technologies interact, why certain patterns are used, and how to structure an application that is scalable, secure, and maintainable.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Rather than following step-by-step instructions, I’ve worked to internalize the reasoning behind each architectural decision, often pausing to experiment, refactor, and explore alternate implementations. After completing the core version, I’ll be extending the app with original features, UI/UX enhancements, and custom logic to make the project uniquely mine.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This isn’t just a clone — it’s a launchpad for mastering full stack development through real, applied learning. It is my foot-in-the-door into the world of full stack and start-up development. This project has been helping me tremoundsly in what real world development looks like, including the architecture to the services used. It is an awesome project!
