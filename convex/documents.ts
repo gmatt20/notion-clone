@@ -4,6 +4,16 @@ import { mutation, query } from "./_generated/server";
 import { Doc, Id } from "./_generated/dataModel";
 import { parseArgs } from "util";
 
+// async function getUserId(ctx){
+//   const identity = await ctx.auth.getUserIdentity();
+
+//   if (!identity) {
+//     throw new Error("Not authenticated");
+//   }
+
+//   return identity;
+// }
+
 export const archive = mutation({
   args: { id: v.id("documents") },
   handler: async (ctx, args) => {
@@ -170,10 +180,37 @@ export const restore = mutation({
       }
     }
 
-    await ctx.db.patch(args.id, options);
+    const document = await ctx.db.patch(args.id, options);
 
     recursiveRestore(args.id);
 
-    return existingDocument;
+    return document;
   },
+});
+
+export const removeForever = mutation({
+  args: { id: v.id("documents")},
+  handler: async (ctx, args) => {
+    const identity = await ctx.auth.getUserIdentity();
+
+    if (!identity) {
+      throw new Error("Not authenticated");
+    }
+
+    const userId = identity.subject;
+
+    const existingDocument = await ctx.db.get(args.id);
+
+    if(!existingDocument){
+      throw new Error("Not found");
+    }
+
+    if(existingDocument.userId !== await userId){
+      throw new Error("Unathorized");
+    }
+
+    const document = await ctx.db.delete(args.id);
+
+    return document;
+  }
 });
